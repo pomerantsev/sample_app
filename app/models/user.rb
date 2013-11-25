@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   before_save :convert_email_to_downcase
 
+  has_secure_password
+
   private
 
   def convert_email_to_downcase
