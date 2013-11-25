@@ -7,4 +7,9 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def flash_message(key, value)
+    key = :danger if key.to_sym == :error
+    content_tag :div, value, class: "alert alert-#{key}"
+  end
 end
