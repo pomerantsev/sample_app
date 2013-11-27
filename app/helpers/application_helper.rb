@@ -10,6 +10,7 @@ module ApplicationHelper
 
   def flash_message(key, value)
     key = :danger if key.to_sym == :error
+    key = :warning if key.to_sym == :notice
     content_tag :div, value, class: "alert alert-#{key}"
   end
 end
